@@ -8,6 +8,8 @@ resource "azurerm_virtual_network" "rg103vn100tg" {
   ]  
 } 
 
+
+
 resource "azurerm_subnet" "rg103vn100sn100tg" {    
     name                 = "rg103vn100sn100"
     resource_group_name  = local.resource_group_name
