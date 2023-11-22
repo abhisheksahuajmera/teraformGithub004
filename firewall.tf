@@ -48,7 +48,7 @@ resource "azurerm_firewall" "rg103vn100fptosn100tg" {
 
   ip_configuration {
     name                 = "configuration"
-    subnet_id            = azurerm_subnet.rg103vn100fw100sn100tg.id
+    subnet_id            = azurerm_subnet.rg103vn100fw100sn100tg.id # // chcek later
     public_ip_address_id = azurerm_public_ip.rg103vn100fw100tg.id
   }
 
