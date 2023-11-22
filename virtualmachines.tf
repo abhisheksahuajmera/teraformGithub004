@@ -20,7 +20,7 @@ resource "azurerm_windows_virtual_machine" "r103100100100tg" {  //start witgh ch
   resource_group_name = local.resource_group_name
   location            = local.location 
   size                = "Standard_D2s_v3"
-  admin_username      = "rg103vn100ni100vm100tguser100"
+  admin_username      = "r103100100100100" //rg103vn100ni100vm100tguser100
   admin_password      = "Azure@123"      
     network_interface_ids = [
     azurerm_network_interface.rg103vn100ni100tg.id
