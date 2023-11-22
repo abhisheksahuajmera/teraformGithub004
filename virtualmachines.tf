@@ -15,8 +15,8 @@ resource "azurerm_network_interface" "rg103vn100ni100tg" {
 }
 
 
-resource "azurerm_windows_virtual_machine" "103100100100tg" {  // AT MAX 15 CHAR rg103vn100ni100vm100tg
-  name                = "103100100100"
+resource "azurerm_windows_virtual_machine" "r103100100100tg" {  //start witgh char AT MAX 15 CHAR rg103vn100ni100vm100tg
+  name                = "r103100100100"
   resource_group_name = local.resource_group_name
   location            = local.location 
   size                = "Standard_D2s_v3"
