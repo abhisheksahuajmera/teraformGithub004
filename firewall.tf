@@ -42,7 +42,7 @@ resource "azurerm_firewall_policy" "rg103vn100fp100tg" {
 }
 
 resource "azurerm_firewall" "rg103vn100fptosn100tg" {
-  name                = "rg103vn100fptosn100"
+  name                = "rg103vn100fptosn100tg" // this must be same
   location            = local.location
   resource_group_name = local.resource_group_name
 
