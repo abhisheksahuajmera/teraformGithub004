@@ -43,3 +43,14 @@ depends_on = [
     azurerm_virtual_network.rg103vn100tg
   ]
 }
+
+
+resource "azurerm_subnet_network_security_group_association" "rg103vn100sntosg100tg" {  
+  subnet_id                 = azurerm_subnet.rg103vn100sn100.id
+  network_security_group_id = azurerm_network_security_group.rg103vn100sg100.id
+
+  depends_on = [
+    azurerm_virtual_network.rg103vn100tg,
+    azurerm_network_security_group.rg103vn100sg100tg
+  ]
+}
