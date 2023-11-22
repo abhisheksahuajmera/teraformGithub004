@@ -9,8 +9,8 @@ resource "azurerm_virtual_network" "rg103vn100tg" {
 } 
 
 
-resource "azurerm_subnet" "rg103vn100tgsn100tg" {    
-    name                 = "rg103vn100tgsn100"
+resource "azurerm_subnet" "rg103vn100sn100tg" {    
+    name                 = "rg103vn100sn100"
     resource_group_name  = local.resource_group_name
     virtual_network_name = local.virtual_network.name
     address_prefixes     = ["10.0.0.0/24"]
@@ -19,8 +19,8 @@ resource "azurerm_subnet" "rg103vn100tgsn100tg" {
     ]
 }
 
-resource "azurerm_network_security_group" "rg103vn100tgsg100tg" {
-  name                = "rg103vn100tgsg100"
+resource "azurerm_network_security_group" "rg103vn100sg100tg" {
+  name                = "rg103vn100sg100"
   location            = local.location 
   resource_group_name = local.resource_group_name
 
@@ -41,9 +41,9 @@ depends_on = [
   ]
 }
 
-resource "azurerm_subnet_network_security_group_association" "rg103vn100tgsntosg100tg" {  
-  subnet_id                 = azurerm_subnet.subnetA.id
-  network_security_group_id = azurerm_network_security_group.appnsg.id
+resource "azurerm_subnet_network_security_group_association" "rg103vn100sntosg100tg" {  
+  subnet_id                 = azurerm_subnet.rg103vn100sn100.id
+  network_security_group_id = azurerm_network_security_group.rg103vn100sg100.id
 
   depends_on = [
     azurerm_virtual_network.appnetwork,
