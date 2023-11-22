@@ -8,4 +8,12 @@ resource "azurerm_virtual_network" "rg103vn100tg" {
   ]  
 } 
 
-
+resource "azurerm_subnet" "rg103vn100sn100tg" {    
+    name                 = "rg103vn100sn100"
+    resource_group_name  = local.resource_group_name
+    virtual_network_name = local.virtual_network.name
+    address_prefixes     = ["10.0.0.0/24"]
+    depends_on = [
+      azurerm_virtual_network.appnetwork
+    ]
+}
