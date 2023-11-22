@@ -60,7 +60,7 @@ resource "azurerm_application_gateway" "rg103vn100fw100agtosn100tg" {
      content {
       name  = "${backend_address_pool.value}-pool"
       ip_addresses = [
-      "${azurerm_network_interface.interface[backend_address_pool.value].private_ip_address}"
+      "${azurerm_network_interface.rg103vn100ni100tg[backend_address_pool.value].private_ip_address}"
       ]
     }
    }
