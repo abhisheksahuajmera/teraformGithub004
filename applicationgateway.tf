@@ -55,12 +55,12 @@ resource "azurerm_application_gateway" "rg103vn100fw100agtosn100tg" {
     azurerm_subnet.rg103vn100fw100ag100sn100tg
   ]
 
-   dynamic rg103vn100fw100agtosn100ab100ap100 {  
+   dynamic backend_address_pool {  
      for_each = toset(local.function)
      content {
-      name  = "${rg103vn100fw100agtosn100ab100ap100.value}-pool"
+      name  = "${backend_address_pool.value}-pool"
       ip_addresses = [
-      "${azurerm_network_interface.interface[rg103vn100fw100agtosn100ab100ap100.value].private_ip_address}"
+      "${azurerm_network_interface.interface[backend_address_pool.value].private_ip_address}"
       ]
     }
    }
