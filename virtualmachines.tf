@@ -63,7 +63,7 @@ resource "azurerm_network_interface" "rg103vn100ni101tg" {
 
 resource "azurerm_windows_virtual_machine" "r103100100101tg" {
   for_each = toset(local.function)
-  name                = "${each.key}r103100100101tg"
+  name                = "${substr(each.key, 0, 1) }103100100101tg" // r103100100101tg
   resource_group_name = local.resource_group_name
   location            = local.location 
   size                = "Standard_D2s_v3"
