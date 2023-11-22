@@ -46,7 +46,7 @@ resource "azurerm_application_gateway" "rg103vn100fw100agtosn100tg" {
   }
 
   frontend_ip_configuration {
-    name                 = "rg103vn100fw100agtosn100af100pt100-ip-config"
+    name                 = "rg103vn100fw100agtosn100af100ip100"
     public_ip_address_id = azurerm_public_ip.rg103vn100fw100ag100tg.id    
   }
 
@@ -75,9 +75,9 @@ resource "azurerm_application_gateway" "rg103vn100fw100agtosn100tg" {
   }
 
  http_listener {
-    name                           = "gateway-listener"
-    frontend_ip_configuration_name = "front-end-ip-config"
-    frontend_port_name             = "front-end-port"
+    name                           = "rg103vn100fw100agtosntoaf100"
+    frontend_ip_configuration_name = "rg103vn100fw100agtosn100af100ip100"
+    frontend_port_name             = "rg103vn100fw100agtosn100af100pt100"
     protocol                       = "Http"
   }
 
@@ -85,7 +85,7 @@ resource "azurerm_application_gateway" "rg103vn100fw100agtosn100tg" {
     name               = "RoutingRuleA"
     rule_type          = "PathBasedRouting"
     url_path_map_name  = "RoutingPath"
-    http_listener_name = "gateway-listener"    
+    http_listener_name = "rg103vn100fw100agtosntoaf100"    
     priority = 1
   }
 
